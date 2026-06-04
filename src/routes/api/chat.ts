@@ -52,7 +52,7 @@ export const Route = createFileRoute("/api/chat")({
           query_embedding: queryEmbedding as unknown as string,
           match_user_id: userId,
           match_count: 6,
-          filter_document_ids: body.document_ids?.length ? body.document_ids : null,
+          filter_document_ids: body.document_ids?.length ? body.document_ids : undefined,
         });
         if (matchErr) {
           return new Response(`Retrieval failed: ${matchErr.message}`, { status: 500 });
