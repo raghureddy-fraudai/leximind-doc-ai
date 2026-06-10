@@ -64,7 +64,7 @@ function AuthPage() {
             <div className="size-9 rounded-md bg-foreground text-background grid place-items-center">
               <FileText className="size-4" />
             </div>
-            <span className="font-display text-2xl">Atrium</span>
+            <span className="font-display text-2xl">Leximind</span>
           </Link>
           <div className="max-w-md">
             <p className="font-display text-4xl leading-tight">
