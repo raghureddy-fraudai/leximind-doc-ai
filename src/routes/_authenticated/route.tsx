@@ -36,7 +36,7 @@ function AuthLayout() {
               <FileText className="size-4" />
             </div>
             <div>
-              <div className="font-display text-lg leading-none">Atrium</div>
+              <div className="font-display text-lg leading-none">Leximind</div>
               <div className="text-xs text-muted-foreground mt-1">Document Intelligence</div>
             </div>
           </div>

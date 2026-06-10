@@ -5,13 +5,13 @@ import { FileText, Search, Sparkles, Quote, ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Atrium — Document Intelligence Assistant" },
+      { title: "Leximind — Document Intelligence Assistant" },
       {
         name: "description",
         content:
           "Upload PDFs, contracts, and reports. Ask natural-language questions. Get citation-backed answers grounded only in your documents.",
       },
-      { property: "og:title", content: "Atrium — Document Intelligence Assistant" },
+      { property: "og:title", content: "Leximind — Document Intelligence Assistant" },
       {
         property: "og:description",
         content:
@@ -30,7 +30,7 @@ function Landing() {
           <div className="size-9 rounded-md bg-foreground text-background grid place-items-center">
             <FileText className="size-4" />
           </div>
-          <span className="font-display text-2xl">Atrium</span>
+          <span className="font-display text-2xl">Leximind</span>
         </div>
         <div className="flex items-center gap-2">
           <Link to="/auth">
@@ -51,7 +51,7 @@ function Landing() {
             Your documents,<br />answered.
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-muted-foreground text-lg">
-            Atrium turns contracts, manuals, reports, and research into an instantly queryable
+            Leximind turns contracts, manuals, reports, and research into an instantly queryable
             knowledge base. Every answer comes back with the source and page it came from.
           </p>
           <div className="mt-8 flex items-center justify-center gap-3">
