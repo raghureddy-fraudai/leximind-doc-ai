@@ -1,5 +1,5 @@
 import { createFileRoute, useRouter } from "@tanstack/react-router";
-import { useServerFn } from "@tanstack/react-start";
+import { createClientOnlyFn, useServerFn } from "@tanstack/react-start";
 import { useQuery } from "@tanstack/react-query";
 import { useRef, useState } from "react";
 import {
@@ -23,6 +23,11 @@ export const Route = createFileRoute("/_authenticated/library")({
 
 const ACCEPT = ".pdf,.docx,.txt,.md,.markdown";
 
+const parseFileInBrowser = createClientOnlyFn(async (file: File) => {
+  const { parseFile } = await import("@/lib/parse-document.client");
+  return parseFile(file);
+});
+
 function LibraryPage() {
   const router = useRouter();
   const list = useServerFn(listDocuments);
@@ -40,8 +45,7 @@ function LibraryPage() {
     for (const file of Array.from(files)) {
       try {
         setBusy(`Parsing ${file.name}…`);
-        const { parseFile } = await import("@/lib/parse-document.client");
-        const pages = await parseFile(file);
+        const pages = await parseFileInBrowser(file);
         if (pages.length === 0) throw new Error("No text extracted");
         const chunks = chunkPages(pages);
 
