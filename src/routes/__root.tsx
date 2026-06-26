@@ -77,15 +77,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Leximind" },
+      { title: "Lovable App" },
       { name: "description", content: "Leximind is an AI-powered assistant for intelligent document analysis and Q&A." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Leximind" },
+      { property: "og:title", content: "Lovable App" },
       { property: "og:description", content: "Leximind is an AI-powered assistant for intelligent document analysis and Q&A." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Leximind" },
+      { name: "twitter:title", content: "Lovable App" },
       { name: "twitter:description", content: "Leximind is an AI-powered assistant for intelligent document analysis and Q&A." },
     ],
     links: [
