@@ -40,6 +40,7 @@ function LibraryPage() {
     for (const file of Array.from(files)) {
       try {
         setBusy(`Parsing ${file.name}…`);
+        const { parseFile } = await import("@/lib/parse-document.client");
         const pages = await parseFile(file);
         if (pages.length === 0) throw new Error("No text extracted");
         const chunks = chunkPages(pages);
