@@ -10,7 +10,7 @@ import {
   failDocument,
   deleteDocument,
 } from "@/lib/library.functions";
-import { parseFile } from "@/lib/parse-document.client";
+
 import { chunkPages } from "@/lib/chunk";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -40,6 +40,7 @@ function LibraryPage() {
     for (const file of Array.from(files)) {
       try {
         setBusy(`Parsing ${file.name}…`);
+        const { parseFile } = await import("@/lib/parse-document.client");
         const pages = await parseFile(file);
         if (pages.length === 0) throw new Error("No text extracted");
         const chunks = chunkPages(pages);
