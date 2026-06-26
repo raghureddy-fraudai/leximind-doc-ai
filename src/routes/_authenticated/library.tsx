@@ -10,7 +10,7 @@ import {
   failDocument,
   deleteDocument,
 } from "@/lib/library.functions";
-import { parseFile } from "@/lib/parse-document.client";
+
 import { chunkPages } from "@/lib/chunk";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
